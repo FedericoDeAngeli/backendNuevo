@@ -1,0 +1,23 @@
+<h1>Lista de Productos</h1>
+
+  <div id="productos-container">
+    {{#each productos}}
+      <div id="producto">
+        
+        <h2>{{title}}</h2>
+        <p>ID:{{_id}}</p>
+        <p>Precio: {{price}}</p>
+        <p>Descripción: {{description}}</p>
+        <p>Stock: {{stock}}</p>
+        <p>Categoría: {{category}}</p>
+        <button onclick="agregarAlCarrito('{{_id}}')">Agregar al Carrito</button>
+      </div>
+    {{/each}}
+  </div>
+
+  <script>
+    function agregarAlCarrito(_id) {
+    window.location = `/productos/${_id}`      
+    }
+  </script>
+            

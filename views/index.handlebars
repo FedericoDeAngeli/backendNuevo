@@ -1,0 +1,25 @@
+<h1>Detalle de productos</h1>
+<h2>Bienvenido {{nombre}}</h2>
+
+<ul>
+  {{#each payload}}
+  <li>nombre: {{this.title}}</li>
+  <li>precio: {{this.price}}</li>
+  <li>categoría: {{this.category}}</li>
+  {{/each}}
+</ul>
+
+
+<a {{#if hasPrevPage}} href="/?limit={{limit}}&page={{prevPage}}" {{/if}}>Prev</a>
+[{{ page }}]
+<a {{#if hasNextPage}} href="/?limit={{limit}}&page={{nextPage}}" {{/if}}>Next</a><br>
+Página: <input type="text"> <button onclick="irAPag({{limit}})">ir</button>
+<script>
+  function irAPag(limit) {
+    const pagDeseada = document.querySelector('input').value || 1
+    window.location = `/?limit=${limit}&page=${pagDeseada}`
+  }
+</script>
+<form action="/logout" method="post">
+  <button type="submit">Desloguearme!</button>
+</form>
