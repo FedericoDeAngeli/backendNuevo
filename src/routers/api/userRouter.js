@@ -16,7 +16,7 @@ userRouter.post('/',
      }),
     
       (req, res) => {
-        res.status(201).json({ status: 'success', payload: req.user })
+        res["successfullPost"](req.user)
       },
       (error, req, res, next) => {
         res

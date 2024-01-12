@@ -13,7 +13,7 @@ export const sessionRouter = Router()
       failWithError: true
     }),
     function (req, res) {
-      res.status(201).json({ status: 'success', payload: req.user })
+      res["successfullPost"](req.user)
     },
     function (error, req, res, next) {
       res

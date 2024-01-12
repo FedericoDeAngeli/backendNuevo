@@ -3,6 +3,7 @@ import { dbProductos } from "../../models/product.js";
 import {dbCart} from "../../models/cart.js";
 import { sessionRouter } from "./webSessionRouter.js";
 import { userRouter } from "./webUserRouter.js";
+import { metodosPersonalizados } from "../../middlewares/metodosPersonalizados.js";
 
 
 export const webRouter = Router();
@@ -54,5 +55,6 @@ webRouter.get("/cart/:cid", async (req, res) => {
    res.render("carts", {carrito})
 })
 
+webRouter.use(metodosPersonalizados)
  webRouter.use(sessionRouter)
  webRouter.use(userRouter)
