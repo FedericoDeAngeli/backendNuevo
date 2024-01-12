@@ -15,7 +15,7 @@ export const UserSchema = new Schema({
     statics:{
         registrar: async function (reqBody) {
             reqBody.password = hashear(reqBody.password)
-            const creado = await mongoose.model("usuarios").create(reqBody)
+            const creado = await model("usuarios").create(reqBody)
       
             const datosUsuario = {
               email: creado.email,
@@ -31,7 +31,7 @@ export const UserSchema = new Schema({
 
             let datosUsuario
       
-            if (email === 'adminCoder@coder.com' && password === 'adminCod3r123') {
+            if (username === 'adminCoder@coder.com' && password === 'adminCod3r123') {
               datosUsuario = {
                 email: 'admin',
                 name: 'admin',
@@ -39,7 +39,7 @@ export const UserSchema = new Schema({
                 rol: 'admin'
               }
             } else {
-              const usuario = await mongoose.model("usuarios").findOne({ email: username }).lean()
+              const usuario = await model("usuarios").findOne({ email: username }).lean()
       
               if (!usuario) {
                 throw new Error('usuario no encontrado')

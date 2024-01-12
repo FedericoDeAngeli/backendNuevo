@@ -10,7 +10,7 @@ import { userRouter } from './routers/api/userRouter.js';
 
 
 
-import { webRouter } from './routers/web/webrouter.js';
+import { webRouter } from './routers/web/webRouter.js';
 import { apiRouter } from './routers/api/apiRouter.js';
 
 import{MONGODB_CNX_STRING, SESSION_SECRET, PORT} from "./config.js";

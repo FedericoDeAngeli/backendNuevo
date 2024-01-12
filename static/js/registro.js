@@ -2,12 +2,14 @@ const formRegister = document.querySelector('form')
 
  formRegister?.addEventListener('submit', async event => {
    event.preventDefault()
-   const response = await fetch('/api/usuarios/register', {
+
+   const body = new URLSearchParams(new FormData(formRegister))
+   const response = await fetch('/api/usuarios', {
      method: 'POST',
      headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
      },
-     body: new URLSearchParams(new FormData(formRegister))
+     body
    })
 
    if (response.status === 201) {

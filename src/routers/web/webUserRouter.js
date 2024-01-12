@@ -9,9 +9,9 @@ userRouter.get('/register', function registerView(req, res) {
     })
   })
 
-  userRouter.post('/register',
-  passport.authenticate('register', {
-    successRedirect: '/login',
-    failureRedirect: '/register',
-  })
-)
+//   userRouter.post('/register',
+//   passport.authenticate('register', {
+//     successRedirect: '/login',
+//     failureRedirect: '/register',
+//   })
+// )

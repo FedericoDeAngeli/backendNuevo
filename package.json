@@ -6,7 +6,7 @@
   "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js",
-    "dev": "nodemon -e js, handlebars .",
+    "dev": "nodemon -e js,handlebars .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -14,12 +14,12 @@ sessionRouter.get('/login',  (req, res) =>{
      
    })
 
-   sessionRouter.post('/login',
-  passport.authenticate('login', {
-    successRedirect: '/index',
-    failureRedirect: '/login',
-  })
-)
+//    sessionRouter.post('/login',
+//   passport.authenticate('login', {
+//     successRedirect: '/index',
+//     failureRedirect: '/login',
+//   })
+// )
 
 sessionRouter.get('/githublogin',
   passport.authenticate('github', { scope: ['user:email'] })
@@ -32,10 +32,10 @@ sessionRouter.get('/githubcallback',
   })
 )
 
-sessionRouter.post('/logout', async (req, res) => {
-    req.session.destroy(err => {
-    return res.redirect("/login")
-  })
+// sessionRouter.post('/logout', async (req, res) => {
+//     req.session.destroy(err => {
+//     return res.redirect("/login")
+//   })
 
  // req.logout(error =>{
  //   if(error){
@@ -43,4 +43,4 @@ sessionRouter.post('/logout', async (req, res) => {
  //   }
  //   res.redirect("/api/sesiones/login")
  // })
-})
+//})

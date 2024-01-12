@@ -8,7 +8,7 @@ export const sessionRouter = Router()
 
 
   
-  sessionRouter.post('/', async (req, res) => {
+  sessionRouter.post('/', 
     passport.authenticate('login', {
       failWithError: true
     }),
@@ -22,7 +22,7 @@ export const sessionRouter = Router()
           status: 'error',
           message: 'login failed'
         })
-    }
+    
     // try {
     //   const email = req.body.email
     //   const password = req.body.password
@@ -62,8 +62,9 @@ export const sessionRouter = Router()
     //       console.log("Log succes")
     //      return res.redirect("/index")
     //     })
-      }   
-     
+      } 
+
+  
     
     //   req.session['user'] = datosUsuario
       
@@ -73,5 +74,11 @@ export const sessionRouter = Router()
   //     return res.redirect("/login")    }
   // }
   )
+
+  sessionRouter.delete('/', async (req, res) => {
+    req.session.destroy(err => {
+        return res.status("ok")
+     })})
+        
   
  

@@ -3,8 +3,8 @@ const formLogout = document.querySelector('form')
             formLogout?.addEventListener('submit', async event => {
               event.preventDefault()
             
-             const response = await fetch('/api/sesiones/logout', {
-                method: 'POST'
+             const response = await fetch('/api/sesiones/', {
+                method: 'DELETE'
               })
             
               if (response.status === 200) {
